@@ -1,0 +1,64 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-12">
+      <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+        <div class="horizontal-scroll">
+          <div class="form-group select-page-size-wrap ">
+            <label>Rows on page
+              <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                      ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+              </select>
+            </label>
+          </div>
+          <table class="table" st-table="tableData"  st-safe-src="agencyList">
+            <thead>
+            <tr class="sortable ">
+              <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+              <th st-sort="name">Agency</th>
+              <th st-sort="address">Address</th>
+              <th st-sort="postal_code">Postal Code</th>
+              <th st-sort="commune">Commune</th>
+              <th st-sort="date">Date creation</th>
+              <th st-sort="capital">Capital</th>
+              <th st-sort="insurance_police">Police d'assurance</th>
+              <th st-sort="legal_form">Forme Juridique</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th><input st-search="name" placeholder="Search Nro SCP" class="input-sm form-control search-input" type="search"/></th>
+              <th><input st-search="address" placeholder="Search Address" class="input-sm form-control search-input" type="search"/>
+              <th><input st-search="postal_code" placeholder="Search Postal Code" class="input-sm form-control search-input" type="search"/>
+              <th><input st-search="commune" placeholder="Search Commune" class="input-sm form-control search-input" type="search"/>
+              <th><input st-search="date" placeholder="Search Date" class="input-sm form-control search-input" type="search"/></th>
+              <th><input st-search="capital" placeholder="Search Capital" class="input-sm form-control search-input"  type="search"/></th>
+              <th><input st-search="insurance_police" placeholder="Search Police d'assurance" class="input-sm form-control search-input" type="search"/></th>
+              <th><input st-search="legal_form" placeholder="Search Forme Juridique" class="input-sm form-control search-input" type="search"/>
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in tableData" st-select-row="row" st-select-mode="multiple">
+              <td class="table-id">{{item.id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.address}}</td>
+              <td>{{item.postalCode}}</td>
+              <td>{{item.commune}}</td>
+              <td>{{item.dateCreate}}</td>
+              <td>{{item.capital}}</td>
+              <td>{{item.insurancePolice}}</td>
+              <td>{{item.legalForm}}</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <td colspan="6" class="text-center">
+                <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+              </td>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

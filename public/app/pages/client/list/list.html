@@ -1,0 +1,75 @@
+<div class="widgets">
+    <!--<div class="row">
+        <div class="col-md-6">
+            <div ba-panel ba-panel-title="Bars" ba-panel-class="with-scroll ">
+                <h5>Simple bar chart</h5>
+                <div id="simple-bar" class="ct-chart"></div>
+            </div>
+        </div>
+    </div>-->
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+                <div class="horizontal-scroll">
+                    <div class="form-group select-page-size-wrap ">
+                        <label>Rows on page
+                            <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                                    ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+                            </select>
+                        </label>
+                    </div>
+                    <table class="table" st-table="smartTableData">
+                        <thead>
+                        <tr class="sortable ">
+                            <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+                            <th st-sort="date">Date</th>
+                            <th st-sort="name">Name</th>
+                            <th st-sort="lastname">Last Nmae</th>
+                            <th st-sort="phone">Phone</th>
+                            <th st-sort="mobile">Mobile</th>
+                            <th st-sort="address">Address</th>
+                            <th st-sort="commune">Commune</th>
+                            <th st-sort="postal_code">Postal Code</th>
+                            <th st-sort="partner">Partner</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th><input st-search="date" placeholder="Search Date" class="input-sm form-control search-input" type="search"/></th>
+                            <th><input st-search="name" placeholder="Search Nro SCP" class="input-sm form-control search-input" type="search"/></th>
+                            <th><input st-search="lastname" placeholder="Search SCP Name" class="input-sm form-control search-input"  type="search"/></th>
+                            <th><input st-search="phone" placeholder="Search Date" class="input-sm form-control search-input" type="search"/></th>
+                            <th><input st-search="mobile" placeholder="Search Mobile" class="input-sm form-control search-input" type="search"/>
+                            <th><input st-search="address" placeholder="Search Address" class="input-sm form-control search-input" type="search"/>
+                            <th><input st-search="commune" placeholder="Search Commune" class="input-sm form-control search-input" type="search"/>
+                            <th><input st-search="postal_code" placeholder="Search Postal Code" class="input-sm form-control search-input" type="search"/>
+                            <th><input st-search="partner" placeholder="Search Partner" class="input-sm form-control search-input" type="search"/>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in smartTableData">
+                            <td class="table-id">{{item.id}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.lastname}}</td>
+                            <td>{{item.phone}}</td>
+                            <td>{{item.mobile}}</td>
+                            <td>{{item.address}}</td>
+                            <td>{{item.commune}}</td>
+                            <td>{{item.postal_code}}</td>
+                            <td>{{item.partner}}</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

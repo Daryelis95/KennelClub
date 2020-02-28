@@ -1,0 +1,61 @@
+<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+                <div class="horizontal-scroll">
+                    <div class="form-group select-page-size-wrap ">
+                        <label>Rows on page
+                            <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                                    ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+                            </select>
+                        </label>
+                    </div>
+                    <table class="table" st-table="smartTableData">
+                        <thead>
+                        <tr class="sortable ">
+                            <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+                            <th st-sort="agency">Nro Agency</th>
+                            <th st-sort="scp">Nro SCP</th>
+                            <th st-sort="scpName">SCP</th>
+                            <th st-sort="date">Date</th>
+                            <th st-sort="client">Client</th>
+                            <th st-sort="devis">Devis</th>
+                            <th st-sort="montant">Montant H.T.</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th><input st-search="agency" placeholder="Search Nro Agency" class="input-sm form-control search-input" type="search"/></th>
+                            <th><input st-search="scp" placeholder="Search Nro SCP" class="input-sm form-control search-input" type="search"/></th>
+                            <th><input st-search="scpName" placeholder="Search SCP Name" class="input-sm form-control search-input"  type="search"/></th>
+                            <th><input st-search="date" placeholder="Search Date" class="input-sm form-control search-input" type="search"/></th>
+                            <th><input st-search="client" placeholder="Search Client" class="input-sm form-control search-input" type="search"/></th>
+                            <th><input st-search="devis" placeholder="Search Devis" class="input-sm form-control search-input" type="search"/></th>
+                            <th><input st-search="montant" placeholder="Search Cient" class="input-sm form-control search-input" type="search"/></th>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in smartTableData">
+                            <td class="table-id">{{item.id}}</td>
+                            <td>{{item.agency}}</td>
+                            <td>{{item.scp}}</td>
+                            <td>{{item.scpName}}</td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.client}}</td>
+                            <td>{{item.devis}}</td>
+                            <td>{{item.montant}}</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
